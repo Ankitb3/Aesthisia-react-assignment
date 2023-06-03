@@ -8,10 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-type Inputs = {
-  email: string;
-  password: string;
-};
+
 
 const Loginpage: React.FC = () => {
   const navigate = useNavigate();
@@ -21,7 +18,7 @@ const Loginpage: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  const onSubmit: SubmitHandler<Inputs> = (data: any) => {
+  const onSubmit = (data:any) => {
     setDatas(data);
     toast.success(`login success ${data.email}`, {
       position: toast.POSITION.TOP_CENTER,
